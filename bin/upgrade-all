@@ -386,6 +386,7 @@ def install_brew_packages():
         "coreutils", "gnu-tar", "gnu-getopt", "gnu-sed",
         # Development tools
         "node", "go", "gcc", "gdb", "automake", "cmake", "jsdoc3", "oven-sh/bun/bun",
+        "go-task",
         # Text processing and search
         "ripgrep", "the_silver_searcher", "fd", "fzf", "bat", "ccat", "tree", "jq", "yq",
         # File management
@@ -924,7 +925,7 @@ def main():
 
     env_steps = [
         ("Zsh Config Ensure", create_zshrc_action()),
-        # ("Symlink Tmux Config", create_symlink_action("~/.config/.tmux.conf", "~/.tmux.conf")),
+        ("Symlink Tmux Config", create_symlink_action("~/.config/.tmux.conf", "~/.tmux.conf")),
         # ("Symlink Claude Config", create_symlink_action("~/.config/claude", "~/.claude")),
         # ("Symlink Codex Config", create_symlink_action("~/.config/codex", "~/.codex")),
         # ("Symlink Ripgrep Config", create_symlink_action("~/.config/rg/ripgreprc", "~/.ripgreprc")),
