@@ -399,7 +399,7 @@ def install_brew_packages():
         # Terminal and shell
         "tmux", "neovim", "starship", "rainbarf", "neofetch", "onefetch", "tldr", "bmon", "loc",
         # Applications
-        "awscli", "azure-cli", "hashicorp/tap/terraform",
+        "hashicorp/tap/terraform", "netbirdio/tap/netbird",
     ]
 
     mac_only = ["terminal-notifier"]
@@ -907,10 +907,10 @@ def main():
         ("Paths Writable", lambda: ensure_paths_writable(["~", "~/.config", "~/.config/bin"])),
         ("System Build Tools", ensure_system_build_tools),
         ("NPM Available", ensure_npm_available),
-        ("Repo ~/.config", create_repo_action("~/.config", "theniceboy/.config", must_exist=True)),
-        ("Repo ~/.config/nvim", create_repo_action("~/.config/nvim", "theniceboy/nvim")),
-        ("Repo ~/.sconfig", create_repo_action("~/.sconfig", "theniceboy/.sconfig")),
-        ("Repo ~/Github/mac-ctrl", create_repo_action("~/Github/mac-ctrl", "theniceboy/mac-ctrl")),
+        # ("Repo ~/.config", create_repo_action("~/.config", "theniceboy/.config", must_exist=True)),
+        # ("Repo ~/.config/nvim", create_repo_action("~/.config/nvim", "theniceboy/nvim")),
+        # ("Repo ~/.sconfig", create_repo_action("~/.sconfig", "theniceboy/.sconfig")),
+        # ("Repo ~/Github/mac-ctrl", create_repo_action("~/Github/mac-ctrl", "theniceboy/mac-ctrl")),
     ]
 
     for name, action in pre_steps:
@@ -923,22 +923,22 @@ def main():
         sys.exit(1)
 
     env_steps = [
-        ("Zsh Config Ensure", create_zshrc_action()),
-        ("Symlink Tmux Config", create_symlink_action("~/.config/.tmux.conf", "~/.tmux.conf")),
-        ("Symlink Claude Config", create_symlink_action("~/.config/claude", "~/.claude")),
-        ("Symlink Codex Config", create_symlink_action("~/.config/codex", "~/.codex")),
-        ("Symlink Ripgrep Config", create_symlink_action("~/.config/rg/ripgreprc", "~/.ripgreprc")),
-        ("Agent Tracker Build", create_agent_tracker_build_action()),
-        ("Agent Tracker Brew Service", create_agent_tracker_service_action()),
+        # ("Zsh Config Ensure", create_zshrc_action()),
+        # ("Symlink Tmux Config", create_symlink_action("~/.config/.tmux.conf", "~/.tmux.conf")),
+        # ("Symlink Claude Config", create_symlink_action("~/.config/claude", "~/.claude")),
+        # ("Symlink Codex Config", create_symlink_action("~/.config/codex", "~/.codex")),
+        # ("Symlink Ripgrep Config", create_symlink_action("~/.config/rg/ripgreprc", "~/.ripgreprc")),
+        # ("Agent Tracker Build", create_agent_tracker_build_action()),
+        # ("Agent Tracker Brew Service", create_agent_tracker_service_action()),
     ]
 
     for name, action in env_steps:
         if not run_inline(name, action):
             sys.exit(1)
 
-    schedule_npm_updates(runner)
-    runner.add_task("Homebrew Update", action=create_brew_update_action())
-    runner.add_task("Agent Tracker Build", "cd ~/.config/agent-tracker && ./install.sh")
+    # schedule_npm_updates(runner)
+    # runner.add_task("Homebrew Update", action=create_brew_update_action())
+    # runner.add_task("Agent Tracker Build", "cd ~/.config/agent-tracker && ./install.sh")
 
     success = runner.run_all()
     sys.exit(0 if success else 1)
