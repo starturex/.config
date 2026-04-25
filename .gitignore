@@ -5,3 +5,4 @@
 # ... but these:
 !.gitignore
 !README.md
+!/bin
