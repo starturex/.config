@@ -1,0 +1,21 @@
+# 凭证管理：调用 Mac 系统钥匙串，记住 GitHub 账号密码
+[credential]
+    helper = osxkeychain
+
+# ==============================
+# Git LFS 配置（大文件管理）
+# 作用：让 Git 支持上传大文件（视频、压缩包、图集等）
+# ==============================
+[filter "lfs"]
+    # 提交时：把大文件交给 LFS 管理，不直接放进 Git
+    clean = git-lfs clean -- %f
+    # 拉取时：把 LFS 文件恢复成正常文件
+    smudge = git-lfs smudge -- %f
+    # LFS 处理进程（内部使用，不用管）
+    process = git-lfs filter-process
+    # 必须开启 LFS 才能正常使用项目
+    required = true
+
+# 引入私有配置（不暴露内容）
+[include]
+    path = ~/.sconfig/git/config

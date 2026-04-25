@@ -909,7 +909,7 @@ def main():
         ("NPM Available", ensure_npm_available),
         # ("Repo ~/.config", create_repo_action("~/.config", "theniceboy/.config", must_exist=True)),
         # ("Repo ~/.config/nvim", create_repo_action("~/.config/nvim", "theniceboy/nvim")),
-        # ("Repo ~/.sconfig", create_repo_action("~/.sconfig", "theniceboy/.sconfig")),
+        ("Repo ~/.sconfig", create_repo_action("~/.sconfig", "starturex/.sconfig")),
         # ("Repo ~/Github/mac-ctrl", create_repo_action("~/Github/mac-ctrl", "theniceboy/mac-ctrl")),
     ]
 
