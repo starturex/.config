@@ -1,7 +1,3 @@
-export GPG_TTY=$(tty)
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
 export PATH=$HOME/.local/bin:$PATH
 export XDG_CONFIG_HOME=$HOME/.config
 export LOCALBIN=$XDG_CONFIG_HOME/bin
@@ -28,7 +24,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:/usr/local/opt/node@12/bin
 export PATH=$PATH:/opt/homebrew/opt/llvm/bin
-# export PATH=$PATH:$HOME/Library/Python/3.9/bin
+export PATH=$PATH:$HOME/Library/Python/3.9/bin
 #export TERM=xterm-256color
 export PATH=$PATH:$LOCALPROG/bin
 export PATH=$HOME/fvm/default/bin:$PATH
@@ -36,7 +32,6 @@ export PATH=$PATH:$LOCALPROG/flutter/bin:$PATH
 export PATH=$PATH:$LOCALPROG/flutter/bin/cache/dart-sdk/bin
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export FLUTTER_ROOT=$LOCALPROG/flutter
 export TERM=screen-256color
 export TERM_ITALICS=true

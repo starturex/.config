@@ -923,7 +923,7 @@ def main():
         sys.exit(1)
 
     env_steps = [
-        # ("Zsh Config Ensure", create_zshrc_action()),
+        ("Zsh Config Ensure", create_zshrc_action()),
         # ("Symlink Tmux Config", create_symlink_action("~/.config/.tmux.conf", "~/.tmux.conf")),
         # ("Symlink Claude Config", create_symlink_action("~/.config/claude", "~/.claude")),
         # ("Symlink Codex Config", create_symlink_action("~/.config/codex", "~/.codex")),
