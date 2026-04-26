@@ -9,3 +9,5 @@
 !/zsh
 !/git
 !/aerospace
+!/.tmux.conf
+!/tmux
