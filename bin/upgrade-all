@@ -927,12 +927,13 @@ def main():
     env_steps = [
         ("Zsh Config Ensure", create_zshrc_action()),
         ("Symlink Tmux Config", create_symlink_action("~/.config/.tmux.conf", "~/.tmux.conf")),
+        ("Symlink Maven Config", create_symlink_action("~/.config/maven/settings.xml", "~/.m2/settings.xml")),
         # ("Symlink Claude Config", create_symlink_action("~/.config/claude", "~/.claude")),
         # ("Symlink Codex Config", create_symlink_action("~/.config/codex", "~/.codex")),
         # ("Symlink Ripgrep Config", create_symlink_action("~/.config/rg/ripgreprc", "~/.ripgreprc")),
         # ("Agent Tracker Build", create_agent_tracker_build_action()),
         # ("Agent Tracker Brew Service", create_agent_tracker_service_action()),
-        ("Symlink Tmux Config", create_symlink_action("~/.sconfig/ssh/config", "~/.ssh/config")),
+        ("Symlink SSH Config", create_symlink_action("~/.sconfig/ssh/config", "~/.ssh/config")),
     ]
 
     for name, action in env_steps:
