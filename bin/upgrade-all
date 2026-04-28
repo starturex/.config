@@ -401,7 +401,7 @@ def install_brew_packages():
         # Applications
         "hashicorp/tap/terraform",
         # DIY
-        "go-task",  "netbirdio/tap/netbird",
+        "go-task",  "netbirdio/tap/netbird", "git-lfs",
     ]
 
     mac_only = ["terminal-notifier"]
